@@ -47,15 +47,36 @@ class LinkedList:
             predNode.next = curNode.next
         print("Removing : ",curNode.data)
 
-# ll = LinkedList()
-# print("Initial Length",ll.__len__())
-# ll.Perpend(0)
-# ll.Perpend(1)
-# ll.Perpend(2)
-# ll.Perpend(3)
-# ll.Perpend(4)
-# print("Length after adding Elements",ll.__len__())
-# ll.traverse()
-# ll.contains(4)
-# ll.remove(3)
-# ll.traverse()
+
+    def findMiddleOnePass(self):
+        fastNode = self._head
+        slowNode = self._head
+
+        while fastNode is not None:
+            fastNode = fastNode.next.next
+            slowNode = slowNode.next
+
+        print(f"Middle Found : {slowNode.data}")
+ll = LinkedList()
+print("Initial Length",ll.__len__())
+ll.Perpend(0)
+ll.Perpend(1)
+ll.Perpend(2)
+ll.Perpend(3)
+ll.Perpend(4)
+ll.Perpend(5)
+ll.Perpend(6)
+ll.Perpend(7)
+ll.Perpend(8)
+ll.Perpend(9)
+ll.Perpend(10)
+ll.Perpend(11)
+ll.Perpend(12)
+ll.Perpend(13)
+ll.Perpend(14)
+print("Length after adding Elements",ll.__len__())
+ll.traverse()
+ll.contains(4)
+ll.remove(3)
+ll.traverse()
+ll.findMiddleOnePass()
